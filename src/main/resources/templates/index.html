@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses</title>
+</head>
+<body>
+<table border="">
+    <tr>
+        <th>ID</th>
+        <th>Prefix</th>
+        <th>Code</th>
+        <th>Name</th>
+    </tr>
+    <tr th:each="c : ${cList}">
+        <td th:text="${c.id}">108</td>
+        <td th:text="${c.prefix}">PROG</td>
+        <td th:text="${c.code}">32758</td>
+        <td th:text="${c.name}">JavaEE</td>
+    </tr>
+
+</table>
+<br>
+<hr>
+<br>
+<form method="post" action="#" th:action="@{/addCourse}">
+    ID:<input type="number" name="id"><br><br>
+    Prefix: <input type="text" name="prefix"><br><br>
+    Code: <input type="text" name="code"><br><br>
+    Name: <input type="text" name="name"><br><br>
+    <input type="submit" value="Enter">
+</form>
+
+</body>
+</html>
